@@ -1,0 +1,225 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Kanit">
+
+  
+    <title>Document</title>
+
+    <style>
+    .flexMain {
+      display:flex;
+      align-items: center
+    }
+    .flex1 { flex:1 }
+    .flex2 { flex:2 }
+    .flex3 { flex:3 }
+    
+    button.siteLink {
+      margin-left:-5px;
+      border:none;
+      padding:24px;
+      display:inline-block;
+      min-width:115px;
+    }
+    .whiteLink {
+      background : #fff;
+    }
+    .whiteLink:active {
+      background : #000;
+      color: #fff;
+    }
+    .blackLink {
+      color: #fff;
+      background:#232323;
+      transition: all 300ms linear;
+    }
+    
+    .blackLink:active {
+      color: #000;
+      background:#fff
+    }
+    #siteBrand {
+      font-family: impact;
+      letter-spacing : -1px;
+      font-size:32px;
+      color:#252525;
+      line-height : 1em;
+    }
+    #menuDrawer {
+      background:#fff;
+      position:fixed;
+      height:100vh;
+      overflow:auto;
+      z-index:12312;
+      top:0;
+      left:0;
+      border-right:1px solid #eaeaea;
+      min-width:25%;
+      max-width:320px;
+      width:100%;
+      transform : translateX(-100%);
+      transition : transform 200ms linear;
+    }
+    #mainNavigation {
+      transition : transform 200ms linear;
+      background : #fff;
+    }
+    .drawMenu > #menuDrawer {
+      transform : translateX(0%);
+    }
+    .drawMenu > #mainNavigation {
+      transform : translateX(25%);
+    }
+    .fa-times {
+      cursor : pointer
+    }
+    a.nav-menu-item:hover {
+      margin-left:2px;
+      border-left:10px solid black;
+    }
+    a.nav-menu-item{
+      transition:border 200ms linear;
+      text-decoration:none;
+      display:block;
+      padding:18px;
+      padding-left:32px;
+      border-bottom:1px solid #eaeaea;
+      font-weight:bold;
+      color:#343434
+    }
+    select.noStyle {
+      border:none;
+      outline:none
+    }
+
+    #seconde-navbar{
+      padding: 10px;
+      font-family: Kanit ;
+      text-align: center;
+      padding-left: 30%;
+      
+    }
+    
+    a:link {
+         color: greenyellow;
+         background-color: transparent;
+         text-decoration: none;
+      }
+      a:visited {
+         color: deepskyblue;
+         background-color: transparent;
+         text-decoration: none;
+      }
+      a:active {
+         color: yellow;
+         background-color: transparent;
+      }
+
+      hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 1;
+  border-top: 1px solid rgba(0, 0, 0, 0.89);
+}  
+.search-button{
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+.search-button:hover{
+  background-color: #f1f1f1;
+}
+
+#denem{
+  width: 15px;
+  padding: 2px;
+  margin-left: 1px;
+  height: 62px;
+
+}
+  
+</style>
+  
+</head>
+<body>
+
+  
+  <div class="p-3 bg-dark text-white">
+    <div class="flexMain">
+      <div class="flex1">
+  
+      </div>
+      <div class="flex2 text-center">
+        <div><strong>Now is the time to buy something, right? 😏</strong></div>
+      </div>
+      <div class="flex1">
+  
+      </div>
+    </div>
+  </div>
+  <div id="menuHolder">
+    <div role="navigation" class="sticky-top border-bottom border-top" id="mainNavigation">
+      <div class="flexMain">
+        <div class="flex2">
+          <div style="border-right:1px solid #eaeaea; height: 60px; width: 320px; text-align: center;">  
+            <input type="search" class="child inline-block-child" style="padding: 2px;height: 60px;" placeholder="" aria-label="Search" aria-describedby="search-addon" name="q" />
+            <button class="blackLink siteLink" id="denem">Search</button>
+          </div>
+          
+          
+        </div>
+        <div class="flex3 text-center" id="siteBrand">
+          E-commerce website
+        </div>
+  
+        <div class="flex2 text-end d-block d-md-none">
+          <button class="whiteLink siteLink"><i class="fas fa-search"></i></button>
+        </div>
+  
+        <div class="flex2 text-end d-none d-md-block">
+          <button class="whiteLink siteLink">REGISTER</button>
+          <button class="blackLink siteLink">Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-scroller bg-body shadow-sm" id="seconde-navbar">
+    <nav class="nav" aria-label="Secondary navigation">
+      <a class="nav-link" href="#">Electronic</a>
+      <a class="nav-link" href="#">Clothes</a>
+      <a class="nav-link" href="#">Home Appliances</a>
+      <a class="nav-link" href="#">Cosmetic</a>
+      <a class="nav-link" href="#">Sports&Outdoor</a>
+      <a class="nav-link" href="#">Car Parts</a>
+      <a class="nav-link" href="#">Garden Equipment</a>
+    </nav>
+  </div>
+  
+  {%block content%}
+
+  {%endblock%}
+  
+  <div class = "fixed-bottom">
+    <hr/>
+        <nav class="nav" id="second-nav-bar">     
+          <div class="nav">           
+          <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" style="padding-bottom: 10px;">Hakkımızda</a>
+          </div> 
+        </nav>
+  </div>   
+</body>
+</html>
