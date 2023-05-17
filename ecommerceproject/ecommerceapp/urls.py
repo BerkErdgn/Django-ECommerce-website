@@ -7,5 +7,14 @@ app_name = "ecommerceapp"
 urlpatterns = [
     path('',views.index,name="index"),
     path('about/', views.about, name="about"),
-    path('signup/',views.SignUpView.as_view(), name="signup")
+    path('signup/',views.SignUpView.as_view(), name="signup"),
+    path('electronic/', views.electronic_page, name="electronic"),
+    path('clothes/', views.clothes_page, name="clothes"),
+    path('homeappliances/', views.home_appliances_page, name="homeappliances"),
+    path('cosmetic/', views.cosmetic_page, name="cosmetic"),
+    path('sportandoutdoor/', views.sport_outdoor_page, name="sportandoutdoor"),
+    path('carpart/', views.car_part_page, name="carpart"),
+    path('gardenequipment/', views.garden_equipment_page, name="gardenequipment"),
+ 
+
 ]

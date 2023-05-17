@@ -107,7 +107,7 @@
     }
     
     a:link {
-         color: greenyellow;
+         color: deepskyblue;
          background-color: transparent;
          text-decoration: none;
       }
@@ -151,6 +151,7 @@
 
 }
   
+
 </style>
   
 </head>
@@ -163,10 +164,9 @@
   
       </div>
       <div class="flex2 text-center">
-        <div><strong>Now is the time to buy something, right? 😏</strong></div>
+        <div><strong>Now is the time to buy something, right? 😏</strong></div>     
       </div>
       <div class="flex1">
-  
       </div>
     </div>
   </div>
@@ -174,12 +174,14 @@
     <div role="navigation" class="sticky-top border-bottom border-top" id="mainNavigation">
       <div class="flexMain">
         <div class="flex2">
-          <div style="border-right:1px solid #eaeaea; height: 60px; width: 320px; text-align: center;">  
-            <input type="search" class="child inline-block-child" style="padding: 2px;height: 60px;" placeholder="" aria-label="Search" aria-describedby="search-addon" name="q" />
-            <button class="blackLink siteLink" id="denem">Search</button>
-          </div>
+          {% if request.user.is_authenticated %}
+           <h4>Welcome <h5>{{user.username}}</h5></h4>
+          {% else %}
           
+          {% endif %}
           
+        
+
         </div>
         <div class="flex3 text-center" id="siteBrand">
           <a href="{% url 'ecommerceapp:index' %}" style="color: #000;">E-commerce website</a>
@@ -197,9 +199,6 @@
           <a href="{% url 'login' %}"><button class="blackLink siteLink">Login</button></a>
           {% endif %}
 
-
-          
-          
         </div>
       </div>
     </div>
@@ -207,7 +206,7 @@
 
   <div class="nav-scroller bg-body shadow-sm" id="seconde-navbar">
     <nav class="nav" aria-label="Secondary navigation">
-      <a class="nav-link" href="#">Electronic</a>
+      <a class="nav-link" href="{% url 'ecommerceapp:electronic' %}">Electronic</a>
       <a class="nav-link" href="#">Clothes</a>
       <a class="nav-link" href="#">Home Appliances</a>
       <a class="nav-link" href="#">Cosmetic</a>
@@ -217,17 +216,38 @@
     </nav>
   </div>
   
+  
   {%block content%}
 
   {%endblock%}
   
-  <div class = "fixed-bottom">
-    <hr/>
-        <nav class="nav" id="second-nav-bar">     
-          <div class="nav">           
-          <a class="nav-link" href="{% url 'ecommerceapp:about' %}" tabindex="-1" aria-disabled="true" style="padding-bottom: 10px;">Hakkımızda</a>
-          </div> 
-        </nav>
-  </div>   
+  
 </body>
 </html>
+
+
+
+
+<!--
+<div class="container h-100">
+            <div class="d-flex justify-content-center h-100">
+              <div class="searchbar">
+                <input class="search_input" type="text" name="" placeholder="Search...">
+                <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+              </div>
+            </div>
+          </div>
+
+
+<div id="menuHolder">
+    <div role="navigation" class="sticky-top border-bottom border-top" id="mainNavigation">
+      <div class="flexMain">
+        <div class="flex2">
+          <div style="border-right:1px solid #eaeaea; height: 60px; width: 320px; text-align: center;">  
+            <input type="search" class="child inline-block-child" style="padding: 2px;height: 60px;" placeholder="" aria-label="Search" aria-describedby="search-addon" name="q" />
+            <button class="blackLink siteLink" id="denem">Search</button>
+          </div>
+
+
+
+-->
