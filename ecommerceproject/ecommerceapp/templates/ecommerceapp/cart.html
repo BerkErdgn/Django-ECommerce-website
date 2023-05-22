@@ -3,26 +3,17 @@
 
 {% block content %}
 
+{% if messages %}  
+{% for message in messages %}
+<div class="alert alert-success">{{ message }}</div>
+{% endfor %}
+{% endif %}
 
 {% if item_list|length == 0 %}
 
-<div class="container" style="margin-top: 25px; margin-bottom: 40px;">
-    <div class="row no-gutters">
-      <!-- cart -->
-      <div class="col-lg-9">
-        <div class="card border shadow-0">
-          <div class="m-4">
-            <h4 class="card-title mb-4">Your shopping cart</h4>
-            
-              <div class="row gy-3 mb-4">
-                <h2 style="position: relative;">boş</h2>
-                </div>
-        </div>
-      </div>
-      <!-- cart -->
-    </div>
+  <div class="container" style="margin-top: 25px; margin-bottom: 40px; border: 1px solid rgb(240, 238, 238);">
+    <h4 class="card-title mb-4" style="margin-left: 180px;margin-right: 180px; margin-top: 50px;">Your shopping cart is empty. OKEYYYY Let's go and buy something. 🛒</h4>
   </div>
-
 {% else %}
 
 <!-- cart + summary -->

@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import CreateView
+from django.contrib import messages
 
 # Create your views here.
 
@@ -67,7 +68,7 @@ def addbuyitem(request,pk):
         print("denee")
     else:
         models.Buyitem.objects.create(item_pk=pk,who_buy = request.user)
-        return redirect('ecommerceapp:index')
+        return redirect('ecommerceapp:cart')
    
 @login_required    
 def cart(request):
@@ -166,12 +167,13 @@ def order (request):
                                             ordered_items_pk=str(item_pk_list))
             for i in item_pk_list:
                 models.Buyitem.objects.filter(who_buy=username,item_pk = i).delete()
-            
-
+            messages.info(request,"Successfully received your order")
             return redirect("ecommerceapp:cart")
         else:
-            print("sorun")
-            pass
+            messages.info(request, "You entered an incorrect username. Please enter correctly.")
+            #mesaj eklenecek ve atılıcak
+            return redirect("ecommerceapp:payment")
+            
     else:
         pass    
 

@@ -3,39 +3,206 @@
 {% block content %}
 
 <style>
-  .carousel{
-      width: 950px;
-      height: 400px;
-      margin-left:25%;
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
   }
 
-  
- 
-  
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  .b-example-divider {
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
+
+  .b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+  }
+
+  .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+  }
+
+  .nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+  }
+
+  .nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .btn-bd-primary {
+    --bd-violet-bg: #712cf9;
+    --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--bd-violet-bg);
+    --bs-btn-border-color: var(--bd-violet-bg);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #6528e0;
+    --bs-btn-hover-border-color: #6528e0;
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #5a23c8;
+    --bs-btn-active-border-color: #5a23c8;
+  }
+  .bd-mode-toggle {
+    z-index: 1500;
+  }
 </style>
 
-<div id="carouselExample" class="carousel slide" >
-  
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="https://previews.123rf.com/images/vadish/vadish1710/vadish171000058/87536826-super-sale-20-percent-discount-poster-and-flyer-template-for-design-poster-flyer-and-banner-on.jpg" style="height: 500px;width: 700px;" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="https://edit.org/img/blog/ut9-sale-sign-template-customize-online.jpg" style="height: 500px;width: 700px;" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="https://media.istockphoto.com/id/1176999930/vector/biggest-sale-banner-or-poster-design-with-40-80-discount-offer-and-geometric-elements.jpg?s=1024x1024&w=is&k=20&c=rBaA9UIdVMi2GWwSADZinOMQRdMoE4ITSUbbt5YZPuw=" style="height: 500px;width: 700px;" class="d-block w-100" alt="...">
+{% load static %}
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+
+<main>
+
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel" style="height: 650px;">
+<div class="carousel-indicators">
+  <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+  <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+  <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+</div>
+<div class="carousel-inner">
+  <div class="carousel-item active">
+    <img src="https://images.ctfassets.net/17o2epk8ivh7/4XOfcVjU6L9Z0yxkgW0WeI/95c8ab19d73e18671e9475de046233d4/DISCOUNT_TACTICS_NEW_COLOURS_FOR_VANESSA.jpg?h=1215&q=90&w=2160" class="bd-placeholder-img" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+    <div class="container"> 
+        <div class="carousel-caption text-start">
+            <h1>Now it's time to shop.</h1>
+            <p>Now it's time to shop! With the discounted products on our e-commerce site, you can have the products you want while protecting your budget. Check it out now, don't miss the advantages!</p>
+            <p><a class="btn btn-lg btn-primary" href="{% url 'login' %}">Sign up today</a></p>
+        </div>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+  <div class="carousel-item">
+    <img src="https://st2.depositphotos.com/3246347/10607/i/600/depositphotos_106077316-stock-photo-discount-25-percent-off-3d.jpg" class="bd-placeholder-img" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+    <div class="container">
+        <div class="carousel-caption">
+            <h1>Summer discounts have started!</h1>
+            <p>Summer discounts have started! Here are some great opportunities to refresh your wardrobe. Discover the most trendy products of the season at discounted prices</p>
+            <p><a class="btn btn-lg btn-primary" href="{% url 'login' %}">Sign up today</a></p>
+        </div>
+    </div>
+  </div>
+  <div class="carousel-item">
+    <img src="https://media.smallbiztrends.com/2017/04/shutterstock_543802489.jpg" class="bd-placeholder-img" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+    <div class="container">
+        <div class="carousel-caption text-end">
+            <h1>Special discounts for today only!</h1>
+            <p>Special discounts for today only! Now you can buy the products you need at more affordable prices. Don't miss out!</p>
+            <p><a class="btn btn-lg btn-primary" href="{% url 'login' %}">Sign up today</a></p>
+        </div>
+    </div>
+  </div>
 </div>
+<button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev" >
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Next</span>
+</button>
+</div>
+
+
+<!-- Marketing messaging and featurettes
+================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<div class="container marketing">
+
+<!-- Three columns of text below the carousel -->
+<div class="row" style="margin-left: 60px; margin-top: 20px;" >
+  <div class="col-lg-4">
+    <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="https://media.istockphoto.com/id/874826500/tr/foto%C4%9Fraf/ak%C4%B1ll%C4%B1-tv-ak%C4%B1ll%C4%B1-telefon-dijital-tablet-ve-diz%C3%BCst%C3%BC-bilgisayar-yans%C4%B1t%C4%B1c%C4%B1-y%C3%BCzeyi.jpg?s=170667a&w=0&k=20&c=tUNKqMdqirZgjNV1cwF7nWr7fgKQI3DCs9XAMQuFbcM=" class="bd-placeholder-img" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+    <h2 class="fw-normal">Electronic</h2>
+    <p>Electronic products are on sale with discounts. You can find the latest technologies below.</p>
+    <p><a class="btn btn-secondary" href="{% url 'ecommerceapp:electronic' %}">View details &raquo;</a></p>
+  </div><!-- /.col-lg-4 -->
+  <div class="col-lg-4">
+    <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="https://iatkv.tmgrup.com.tr/6f0d18/0/0/0/0/0/0?u=https%3A%2F%2Fitkv.tmgrup.com.tr%2Falbum%2F2022%2F04%2F02%2F1648910269493.jpg&mw=400&l=1" class="bd-placeholder-img" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+    <h2 class="fw-normal">Clothes</h2>
+    <p>New fashion clothes on our site. You can find your style with very beautiful colors and varieties.</p>
+    <p><a class="btn btn-secondary" href="{% url 'ecommerceapp:clothes' %}">View details &raquo;</a></p>
+  </div><!-- /.col-lg-4 -->
+  <div class="col-lg-4">
+    <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP3t0HhlnmmSBNUmHUPznrEERSG1IxplTCfw&usqp=CAU" class="bd-placeholder-img" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+    <h2 class="fw-normal">Car parts</h2>
+    <p>You can add style to your style with new parts to your cars. Bring your car to life with our catalog of many products.</p>
+    <p><a class="btn btn-secondary" href="{% url 'ecommerceapp:carpart' %}">View details &raquo;</a></p>
+  </div><!-- /.col-lg-4 -->
+</div><!-- /.row -->
+
+
+<!-- START THE FEATURETTES -->
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+  <div class="col-md-7">
+    <h2 class="featurette-heading fw-normal lh-1">Now it's time to shop!</h2>
+    <p class="lead">Now it's time to shop! With the discounted products on our e-commerce site, you can have the products you want while protecting your budget. Check it out now, don't miss the advantages!</p>
+  </div>
+  <div class="col-md-5">
+    <img src="https://images.ctfassets.net/17o2epk8ivh7/4XOfcVjU6L9Z0yxkgW0WeI/95c8ab19d73e18671e9475de046233d4/DISCOUNT_TACTICS_NEW_COLOURS_FOR_VANESSA.jpg?h=1215&q=90&w=2160" class="bd-placeholder-img" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+  </div>
+</div>
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+  <div class="col-md-7 order-md-2">
+    <h2 class="featurette-heading fw-normal lh-1">Summer discounts have started!</span></h2>
+    <p class="lead">Summer discounts have started! Here are some great opportunities to refresh your wardrobe. Discover the most trendy products of the season at discounted prices</p>
+  </div>
+  <div class="col-md-5 order-md-1">
+    <img src="https://st2.depositphotos.com/3246347/10607/i/600/depositphotos_106077316-stock-photo-discount-25-percent-off-3d.jpg" class="bd-placeholder-img" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+  </div>
+</div>
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+  <div class="col-md-7">
+    <h2 class="featurette-heading fw-normal lh-1">Special discounts for today only!</span></h2>
+    <p class="lead">Special discounts for today only! Now you can buy the products you need at more affordable prices. Don't miss out!</p>
+  </div>
+  <div class="col-md-5">
+    <img src="https://media.smallbiztrends.com/2017/04/shutterstock_543802489.jpg" class="bd-placeholder-img" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+  </div>
+</div>
+
+<hr class="featurette-divider">
+
+<!-- /END THE FEATURETTES -->
+
+</div><!-- /.container -->
 
 
 

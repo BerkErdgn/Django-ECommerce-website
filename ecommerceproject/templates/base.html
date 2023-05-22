@@ -9,7 +9,8 @@
     <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Kanit">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+    <title>E-commerce</title>
 
     <style>
     .flexMain {
@@ -197,15 +198,11 @@
   <div id="menuHolder">
     <div role="navigation" class="sticky-top border-bottom border-top" id="mainNavigation">
       <div class="flexMain">
-        <div class="flex2">
+        <div class="flex2" >
           {% if request.user.is_authenticated %}
-           <h4>Welcome <h5>{{user.username}}</h5></h4>
-          {% else %}
-          
+           <h4 style="font-size:larger;  width: 260px; margin-left: 10px; padding: 5px; font-family: Pacifico;">Welcome, {{user.username}}</h4>
+          {% else %}    
           {% endif %}
-          
-        
-
         </div>
         <div class="flex3 text-center" id="siteBrand">
           <a href="{% url 'ecommerceapp:index' %}" style="color: #000;">E-commerce website</a>
@@ -217,7 +214,7 @@
   
         <div class="flex2 text-end d-none d-md-block">
           {% if request.user.is_authenticated %}
-          <a href="{% url 'ecommerceapp:cart' %}"><button class="whiteLink siteLink" style="height: 72px;"><i class="fa fa-shopping-cart" style="font-size:19px;"></i><span class='badge badge-warning' id='lblCartCount' style="margin-left: 5px;"> 5 </span></button></a>
+          <a href="{% url 'ecommerceapp:cart' %}"><button class="whiteLink siteLink" style="height: 72px;"><i class="fa fa-shopping-cart" style="font-size:19px;"></i></button></a>
         
           <a href="{% url 'logout' %}?next=/"><button class="blackLink siteLink">Logout</button></a>        
           {% else %}
