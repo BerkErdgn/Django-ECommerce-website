@@ -15,6 +15,10 @@ urlpatterns = [
     path('sportandoutdoor/', views.sport_outdoor_page, name="sportandoutdoor"),
     path('carpart/', views.car_part_page, name="carpart"),
     path('gardenequipment/', views.garden_equipment_page, name="gardenequipment"),
- 
-
+    path('detail/<int:pk>', views.detail,name="detail"),
+    path('addbuyitem/<int:pk>', views.addbuyitem, name="addbuyitem"),
+    path('cart/',views.cart,name="cart"),
+    path('deletecart/<int:pk>', views.deletecart, name="deletecart"),
+    path('payment/', views.payment, name="payment"),
+    path('order/', views.order, name="order"),
 ]
